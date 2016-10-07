@@ -40,6 +40,7 @@ $ composer update
 $ php artisan migrate
 ```
 这会生成12个数据表:
+
 1.  `users`   //用户表
 2.  `posts`  // 文章表
 3.  `categories`  分类表
@@ -52,6 +53,7 @@ $ php artisan migrate
 10.  `password_resets`   //Reset密码表
 11.  `failed_jobs`   //失败队列表
 12.  `notifications`   //通知表
+
 
 只有在发送邮件和更新[algolia](https://www.algolia.com/)索引的时候用到， 如果你既不用邮提醒，也不用搜索功能， 请忽略。
 
