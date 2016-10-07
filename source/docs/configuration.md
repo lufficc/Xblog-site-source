@@ -1,17 +1,39 @@
 title: 配置
 ---
-您可以在 `_config.yml` 中修改大部份的配置。
+您可以在 `.env` 中修改大部份的配置。
 
-## 网站
+如果你已经将Xblog下载到本地,进入到目录:`cd xblog`, 更新依赖:
+```
+$ composer update
+```
+待所有依赖安装完毕, 进行配置。
+
+## `.env`
+
+下面是一些独有的配置, 其他配置和laravel一样。
 
 参数 | 描述
 --- | ---
-`title` | 网站标题
-`subtitle` | 网站副标题
-`description` | 网站描述
-`author` | 您的名字
-`language` | 网站使用的语言
-`timezone` | 网站时区。Hexo 默认使用您电脑的时区。[时区列表](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)。比如说：`America/New_York`, `Japan`, 和 `UTC` 。
+`SITE_NAME` | 网站名称, 发邮件时用到
+`EMAIL` | 当有人评论你的文章时的目的邮件地址, 覆盖管理员邮箱。可以忽略, 忽略时采用你注册时的邮箱。
+`AVATAR` | 采用自带评论时或者用户注册的默认头像URL地址。
+`QINIU_AK` | 七牛云存储的AccessKey, 建议申请, 否则图片保存到本地是个不小的开销。
+`QINIU_SK` | 七牛云存储的SecretKey。
+`QINIU_BUCKET` | 您的七牛BUCKET名字。
+`QINIU_DEFAULT_DOMAIN` | 您的七牛域名,格式为http://*.*.*.*
+`QINIU_HTTPS_DOMAIN` | 您自定义的七牛HTTPS域名, 和上者选其一, 格式为https://*.*.*/
+`QINIU_CUSTOM_DOMAIN` | 自定义域名, 可以忽略。
+`GITHUB_CLIENT_ID` | Github client_id, 如果你允许Github用户注册你的站点,请填写, 否则忽略。
+`GITHUB_CLIENT_SECRET` | Github client_secret, 同上。
+`GITHUB_REDIRECT` | Github redirect, 同上。
+`ALGOLIA_APP_ID` | 如果你使用algolia的搜索服务, 请填写。
+`ALGOLIA_SECRET` | 同上。
+ `CACHE_DRIVER` | 默认为Redis, 建议为Redis。
+ `SESSION_DRIVER` | 默认为Redis, 建议为Redis。
+ `QUEUE_DRIVER` | 默认为Redis, 建议为Redis。
+    
+
+
 
 ## 网址
 

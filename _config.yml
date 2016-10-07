@@ -22,7 +22,7 @@ deploy:
   repo: https://github.com/lufficc/Xblog.git
   branch: gh-pages
 
-disqus_shortname: laravel-blog
+disqus_shortname: lufficc-github-io
 google_analytics: UA-4910098-10
 fb_admins: 100000247608790
 

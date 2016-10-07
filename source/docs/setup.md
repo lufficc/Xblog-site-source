@@ -1,65 +1,36 @@
-title: 建站
+title: 安装
 ---
 
-安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。
+安装 Xblog 只需几分钟时间，若您在安装过程中遇到问题或无法找到解决方式，请[提交问题](https://github.com/lufficc/Xblog/issues)，我会尽力解决您的问题。
+
+### 安装前提
+
+Xblog就是一个普通的基于laravel5.3的应用程序。所以你的电脑要拥有运行laravel应用程序的环境, 点击[这里](https://laravel.com/docs/5.3/installation)查看安装教程。
+
+假设你已经拥有了必备的条件电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 composer 即可完成 Xblog 的安装。
+如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 composer 即可完成 Xblog 的安装。
 
 ``` bash
-$ hexo init <folder>
-$ cd <folder>
-$ npm install
+$ composer require lufficc/xblog
 ```
 
-新建完成后，指定文件夹的目录如下：
 
-``` plain
-.
-├── _config.yml
-├── package.json
-├── scaffolds
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-```
+有一些建议的可选的依赖:
+- Redis: Cache, Session, Queue 要用到, 这可以大大加速你的应用程序。
 
-### _config.yml
+- Supervisor: 如果你用到了邮件提醒, 那么将使用Supervisor来开启队列发送邮件。你可以暂时忽略。
 
-网站的 [配置](zh-cn/docs/configuration.html) 信息，您可以在此配置大部分的参数。
+如果你做本地开发, 强烈建议使用官方的[Homestead](https://laravel.com/docs/5.3/homestead)进行开发, 它已经包括了Xblog的所有依赖软件。
 
-### package.json
 
-应用程序的信息。[EJS](http://embeddedjs.com/), [Stylus](http://learnboost.github.io/stylus/) 和 [Markdown](http://daringfireball.net/projects/markdown/) renderer 已默认安装，您可以自由移除。
+### 安装 Redis
 
-``` json package.json
-{
-  "name": "hexo-site",
-  "version": "0.0.0",
-  "private": true,
-  "hexo": {
-    "version": ""
-  },
-  "dependencies": {
-    "hexo": "^3.0.0",
-    "hexo-generator-archive": "^0.1.0",
-    "hexo-generator-category": "^0.1.0",
-    "hexo-generator-index": "^0.1.0",
-    "hexo-generator-tag": "^0.1.0",
-    "hexo-renderer-ejs": "^0.1.0",
-    "hexo-renderer-stylus": "^0.2.0",
-    "hexo-renderer-marked": "^0.2.4",
-    "hexo-server": "^0.1.2"
-  }
-}
-```
+- Windows：下载并安装 [git](https://git-scm.com/download/win).
+- Mac：使用 [Homebrew](http://mxcl.github.com/homebrew/) `brew install redis`
+- Linux (Ubuntu, Debian)：`sudo apt-get install redis-server`
 
-### scaffolds
+### 安装 Supervisor
 
-[模版](zh-cn/docs/writing.html) 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。
+- Linux: `sudo apt-get install supervisor`
 
-### source
-
-资源文件夹是存放用户资源的地方。除 `_posts` 文件夹之外，开头命名为 `_` (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 `public` 文件夹，而其他文件会被拷贝过去。
-
-### themes
-
-[主题](zh-cn/docs/themes.html) 文件夹。Hexo 会根据主题来生成静态页面。
+### 注意, 如果你使用了[Homestead](https://laravel.com/docs/5.3/homestead)进行开发, 上述依赖已经存在, 不用安装。
