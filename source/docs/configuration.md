@@ -89,13 +89,12 @@ Linux用户：
 ```
 $ sudo apt-get install supervisor
 ```
-## 配置 Supervisor#
 
 如果你使用了邮件通知功能，需要这一步的配置， 否则可以跳过。
 
 Supervisor 的配置文件一般是放在 /etc/supervisor/conf.d 目录下，在这个目录中你可以创建任意数量的配置文件来要求 Supervisor 怎样监控你的进程。例如我们创建一个 laravel-worker.conf 来启动与监控一个 queue:work 进程：
 
-这里采用我的配置做实例：
+这里采用我的配置做示例：
 ```
 [program:blog-worker]
 command                 = php /var/www/xblog/artisan queue:work --tries=3
