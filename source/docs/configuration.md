@@ -79,3 +79,47 @@ $ php artisan migrate
 ```
 $ php artisan db:seed
 ```
+
+## SuperVisor
+
+如果你使用了邮件功能， 那么你应该使用SuperVisor来开启队列发送邮件， 否则发送邮件将阻塞你的程序。
+windown用户不支持， 你可以使用`php artisan queue:work`,监控队列，但命令行已关闭， 你的监控也会停止，你可以使用官方的Homestead来开发。
+
+Linux用户：
+```
+$ sudo apt-get install supervisor
+```
+## 配置 Supervisor#
+
+如果你使用了邮件通知功能，需要这一步的配置， 否则可以跳过。
+
+Supervisor 的配置文件一般是放在 /etc/supervisor/conf.d 目录下，在这个目录中你可以创建任意数量的配置文件来要求 Supervisor 怎样监控你的进程。例如我们创建一个 laravel-worker.conf 来启动与监控一个 queue:work 进程：
+
+这里采用我的配置做实例：
+```
+[program:blog-worker]
+command                 = php /var/www/xblog/artisan queue:work --tries=3
+directory               = /var/www/xblog
+process_name            = %(program_name)s_%(process_num)s
+numprocs                = 3
+autostart               = true
+autorestart             = true
+stdout_logfile          = /var/www/xblog/storage/logs/blog-worker.log
+stdout_logfile_maxbytes = 10MB
+stderr_logfile          = /var/www/xblog/storage/logs/blog-worker-error.log
+stderr_logfile_maxbytes = 10MB
+```
+这个例子里的 numprocs 命令会要求 Supervisor 运行并监控 3 个 queue:work 进程，并且在它们运行失败后重新启动。
+
+
+当这个配置文件被创建后，你需要更新 Supervisor 的配置，并用以下命令来启动该进程：
+
+```
+sudo supervisorctl reread
+
+sudo supervisorctl update
+
+sudo supervisorctl start blog-worker:*
+```
+
+更多有关 Supervisor 的设置与使用，请参考 [Supervisor 官方文档](http://supervisord.org/index.html)。
