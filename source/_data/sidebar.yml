@@ -4,3 +4,4 @@ docs:
     setup: setup.html
     configuration: configuration.html
     admin: admin.html
+    troubleshooting: troubleshooting.html

@@ -1,8 +1,9 @@
 menu:
   home: 主页
   docs: 文档
-  news: 新闻
+  screenshots: 截图
   demo: 实例
+  troubleshooting: 问题解答
 
 index:
   get_started: 开始使用

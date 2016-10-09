@@ -1,8 +1,9 @@
 menu:
   home: Home
   docs: Docs
-  news: News
+  screenshots: Screenshots
   demo: Example
+  troubleshooting: Trouble
 
 index:
   get_started: Get started
