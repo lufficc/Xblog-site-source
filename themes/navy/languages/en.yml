@@ -21,7 +21,7 @@ sidebar:
     overview: Overview
     setup: Setup
     configuration: Configuration
-    commands: Commands
+    admin: Admin
     migration: Migration
     basic_usage: Basic Usage
     writing: Writing

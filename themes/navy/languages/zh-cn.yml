@@ -21,7 +21,7 @@ sidebar:
     overview: 概述
     setup: 安装
     configuration: 配置
-    commands: 命令
+    admin: 后台
     migration: 迁移
     basic_usage: 基本操作
     writing: 写作

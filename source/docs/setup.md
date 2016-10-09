@@ -15,10 +15,12 @@ $ composer require lufficc/xblog
 ```
 
 
-有一些建议的可选的依赖:
+有一些建议的可选的软件:
 - Redis: Cache, Session, Queue 要用到, 这可以大大加速你的应用程序。
 
 - Supervisor: 如果你用到了邮件提醒, 那么将使用Supervisor来开启队列发送邮件。你可以暂时忽略。
+
+当然,你也可以不用做任何配置,默认是关闭缓存和邮件提醒的。
 
 如果你做本地开发, 强烈建议使用官方的[Homestead](https://laravel.com/docs/5.3/homestead)进行开发, 它已经包括了Xblog的所有依赖软件。
 

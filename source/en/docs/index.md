@@ -1,69 +1,40 @@
-title: Documentation
+title: 文档
 ---
-Welcome to the Hexo documentation. If you encounter any problems when using Hexo, have a look at the  [troubleshooting guide](troubleshooting.html), raise an issue on [GitHub](https://github.com/hexojs/hexo/issues) or start a topic on the [Google Group](https://groups.google.com/group/hexo).
 
-## What is Hexo?
+欢迎使用 Xblog，本文档将帮助您快速上手。如果您在使用过程中遇到问题，请查看 [问题解答](troubleshooting.html) 中的解答，或者在 [GitHub](https://github.com/lufficc/Xblog/issues)上提问。
 
-Hexo is a fast, simple and powerful blog framework. You write posts in [Markdown](http://daringfireball.net/projects/markdown/) (or other languages) and Hexo generates static files with a beautiful theme in seconds.
+## 什么是 Xblog
 
-## Installation
+Xblog 是一个强大、响应式的laravel响应式博客框架, 目的在于让您专注写作。
 
-It only takes a few minutes to set up Hexo. If you encounter a problem and can't find the solution here, please [submit a GitHub issue](https://github.com/hexojs/hexo/issues) and I'll try to solve it.
 
-### Requirements
+## 关于Xblog
+这是一个我个人使用的博客，也曾经使用Hexo 和 github pages 搭过网站，都是都不灵活。因此用Laravel写了这个博客。
 
-Installing Hexo is quite easy. However, you do need to have a couple of other things installed first:
+博客经过了一个多月的在线测试， 期间有两万多的访问量， bug基本修复， 功能基本稳定下来。如果你专注写作，喜欢Laravel, 喜欢简洁， 那么Xblog 是你的不二之选。
 
-- [Node.js](http://nodejs.org/)
-- [Git](http://git-scm.com/)
+后续会分享一些写这个博客的心得，欢迎关注。
 
-If your computer already has these, congratulations! Just install Hexo with npm:
+如果你发现bugs,欢迎 issue.
 
-``` bash
-$ npm install -g hexo-cli
-```
+## 特性
 
-If not, please follow the following instructions to install all the requirements.
+- 支持Markdown, 粘贴板、拖拽上传图片到图传(七牛云)并返回markdown链接。
 
-{% note warn For Mac users %}
-You may encounter some problems when compiling. Please install Xcode from App Store first. After Xcode is installed, open Xcode and go to **Preferences -> Download -> Command Line Tools -> Install** to install command line tools.
-{% endnote %}
+- 全屏写作模式, 实时预览, 快捷键, 自动保存, 代码高亮。
 
-### Install Git
+- 文章的多状态管理(发布,撤回,软删除,永久删除,恢复,草稿)。
 
-- Windows: Download & install [git](https://git-scm.com/download/win).
-- Mac: Install it with [Homebrew](http://mxcl.github.com/homebrew/), [MacPorts](http://www.macports.org/) or [installer](http://sourceforge.net/projects/git-osx-installer/).
-- Linux (Ubuntu, Debian): `sudo apt-get install git-core`
-- Linux (Fedora, Red Hat, CentOS): `sudo yum install git-core`
+- 完善的评论系统, 自带评论支持markdown。可选多说, Disqus。
 
-### Install Node.js
+- 支持全站关闭评论, 文章(或者页面)关闭评论, 为某一篇文章(或者页面)关闭评论,强制开启评论, 自定义评论系统(多说,Disqus)。
 
-The best way to install Node.js is with [nvm](https://github.com/creationix/nvm).
+- 提醒功能, 有回复邮件提醒, 不错过读者回馈。
 
-cURL:
+- 分类, 多标签, 预览功能, 版权, SEO优化。
 
-``` bash
-$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-```
+- 图片管理, 文件管理, 后台自定义设置。
 
-Wget:
+- ......More........
 
-``` bash
-$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
-```
 
-Once nvm is installed, restart the terminal and run the following command to install Node.js.
-
-``` bash
-$ nvm install stable
-```
-
-Alternatively, download and run [the installer](http://nodejs.org/).
-
-### Install Hexo
-
-Once all the requirements are installed, you can install Hexo with npm.
-
-``` bash
-$ npm install -g hexo-cli
-```
