@@ -19,6 +19,9 @@ title: 截图
 ## Disqus
 ![](/Xblog/image/disqus.jpg)
 
+## 邮件提醒
+![](/Xblog/image/mail_noti.png)
+
 ## 后台主页
 ![](/Xblog/image/admin.jpg)
 
