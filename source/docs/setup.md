@@ -11,7 +11,7 @@ Xblog就是一个普通的基于laravel5.3的应用程序。所以你的电脑�
 如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 composer 即可完成 Xblog 的安装。
 
 ``` bash
-$ composer require lufficc/xblog
+$ composer create-project lufficc/xblog
 ```
 
 

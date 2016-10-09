@@ -23,7 +23,7 @@ deploy:
   branch: gh-pages
 
 disqus_shortname: lufficc-github-io
-google_analytics: UA-4910098-10
+google_analytics: UA-81713716-3
 fb_admins: 100000247608790
 
 github: lufficc/Xblog
